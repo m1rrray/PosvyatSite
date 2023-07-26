@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Registration(models.Model):
@@ -8,7 +9,7 @@ class Registration(models.Model):
     email = models.EmailField(max_length=254)
     vkurl = models.URLField(unique=True)
     tgurl = models.CharField(unique=True, max_length=254)
-    phone = models.CharField(max_length=254)
+    phone = PhoneNumberField(null=False, blank=False, unique=True)
     birth_date = models.DateField(max_length=254)
     sex = models.CharField(max_length=50)
     univer = models.CharField(max_length=254)
