@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 from registration.models import Registration
 from registration.serializers import RegistrationSerializer
@@ -10,5 +11,6 @@ from registration.serializers import RegistrationSerializer
 class RegistrationAPI(generics.ListCreateAPIView):
     queryset = Registration.objects.all()
     serializer_class = RegistrationSerializer
-    # permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated, )
     # authentication_classes = (TokenAuthentication, )
+

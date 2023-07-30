@@ -1,3 +1,18 @@
-from django.shortcuts import render
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
-# Create your views here.
+from resettlement.models import Resettlement
+from resettlement.serializers import ResettlementSerializer
+
+
+class ResettlementAPI(generics.ListCreateAPIView):
+    queryset = Resettlement.objects.all()
+    serializer_class = ResettlementSerializer
+    permission_classes = (IsAuthenticated,)
+
+
+
+
+
+
+

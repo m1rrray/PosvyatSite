@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
-# Create your views here.
+from transfer.models import Transfer
+from transfer.serializers import TransferSerializer
+
+
+class TransferAPI(generics.ListCreateAPIView):
+    queryset = Transfer.objects.all()
+    serializer_class = TransferSerializer
+    permission_classes = (IsAuthenticated, )
+    # authentication_classes = (TokenAuthentication, )
+
