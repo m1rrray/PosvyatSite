@@ -19,7 +19,7 @@ from django.db import models
 class Resettlement(models.Model):
     surname = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
-    otchestvo = models.CharField(max_length=100)
+    patronymic = models.CharField(max_length=100)
     vkurl = models.URLField()
     tgurl = models.CharField(max_length=100)
     program = models.CharField(max_length=100)
