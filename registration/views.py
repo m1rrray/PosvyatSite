@@ -11,6 +11,6 @@ from registration.serializers import RegistrationSerializer
 class RegistrationAPI(generics.ListCreateAPIView):
     queryset = Registration.objects.all()
     serializer_class = RegistrationSerializer
-    permission_classes = (IsAuthenticated, )
+    # permission_classes = (IsAuthenticated, )
     # authentication_classes = (TokenAuthentication, )
 

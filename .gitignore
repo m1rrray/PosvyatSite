@@ -2,3 +2,6 @@ db.sqlite3
 .idea
 __pycache__
 users/__pycache__
+your_database.db
+dbtoxls.py
+output_data.xlsx
