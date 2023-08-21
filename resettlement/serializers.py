@@ -18,6 +18,7 @@ class ResettlementSerializer(serializers.ModelSerializer):
     def validate(self, data):
         phone = data.get('phone', None)
         people_custom = data.get('people_custom', [])
+        # save_datatransfer_to_google(data)
 
         if phone is None:
             raise serializers.ValidationError('Не указан phone.')
@@ -31,4 +32,3 @@ class ResettlementSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('Такого phone нет в Registration.')
 
         return data
-

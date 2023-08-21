@@ -10,3 +10,6 @@ class Transfer(models.Model):
     vkurl = models.URLField(unique=True)
     tgurl = models.CharField(unique=True, max_length=254)
     phone = PhoneNumberField(null=False, blank=False, unique=True)
+
+    def __str__(self):
+        return f"{self.surname} {self.name} {self.patronymic}, {str(self.phone)}, {self.email}, {self.vkurl}, {self.tgurl}"

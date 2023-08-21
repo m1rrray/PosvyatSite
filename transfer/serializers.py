@@ -11,7 +11,12 @@ class TransferSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         phone = data.get('phone', None)
+        # print(data)
+        massive = [data.get('surname'), data.get('name'),
+                   data.get('patronymic'), data.get('email'), data.get('vkurl'),
+                   data.get('tgurl'), phone]
 
+        # save_datatransfer_to_google(massive)
         if phone is None:
             raise serializers.ValidationError('Не указан phone.')
 
