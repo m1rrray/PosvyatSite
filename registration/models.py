@@ -8,9 +8,14 @@ class Registration(models.Model):
         ('Мужской', 'Мужской'),
         ('Женский', 'Женский'),
     )
+    TRANSFER_CHOICES = (
+        ('Да, от Одинцово и обратно', 'Да, от Одинцово и обратно'),
+        ('Да, от Парка Победы и обратно', 'Да, от Парка Победы и обратно'),
+        ('Не нужен', 'Не нужен')
+    )
     surname = models.CharField(max_length=254)
     name = models.CharField(max_length=254)
-    patronymic = models.CharField(max_length=254)
+    patronymic = models.CharField(max_length=254, blank=True)
     email = models.EmailField(max_length=254)
     vkurl = models.URLField(unique=True)
     tgurl = models.CharField(unique=True, max_length=254)
@@ -22,8 +27,8 @@ class Registration(models.Model):
     program = models.CharField(max_length=254)
     year = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     group = models.CharField(max_length=254)
-    transfer = models.CharField(max_length=254)
-    health = models.CharField(max_length=254)
+    transfer = models.CharField(max_length=254, choices=TRANSFER_CHOICES)
+    health = models.CharField(max_length=254, blank=True)
 
     def __str__(self):
         return self.surname, self.name, self.patronymic

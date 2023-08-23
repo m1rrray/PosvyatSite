@@ -1,3 +1,4 @@
+APScheduler==3.10.4
 asgiref==3.7.2
 beautifulsoup4==4.12.2
 cachetools==5.3.1
@@ -7,7 +8,6 @@ charset-normalizer==3.2.0
 cryptography==41.0.2
 defusedxml==0.7.1
 Django==4.2.3
-django-cron==0.6.0
 django-phonenumber-field==7.1.0
 django-phonenumbers==1.0.1
 django-templated-mail==1.1.1
@@ -43,5 +43,6 @@ social-auth-core==4.4.2
 soupsieve==2.4.1
 sqlparse==0.4.4
 tzdata==2023.3
+tzlocal==5.0.1
 uritemplate==4.1.1
 urllib3==1.26.16
