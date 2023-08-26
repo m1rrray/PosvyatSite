@@ -32,12 +32,12 @@ def authorize_google():
     return sheets
 
 
-def save_datatransfer_to_google():
+def save_transfer_to_google():
     sheets = authorize_google()
 
     data = Transfer.objects.all()
 
-    range_to_update = f"transfer"
+    range_to_update = f"transfer!A2"
 
     data_to_update = []
     for transfer in data:
@@ -56,12 +56,12 @@ def save_datatransfer_to_google():
                            body=body).execute()
 
 
-def save_dataregistration_to_google():
+def save_registration_to_google():
     sheets = authorize_google()
 
     data = Registration.objects.all()
 
-    range_to_update = f"registration"
+    range_to_update = f"registration!A2"
 
     data_to_update = []
     for registration in data:
@@ -89,12 +89,12 @@ def save_dataregistration_to_google():
                            body=body).execute()
 
 
-def save_dataresettlement_to_google():
+def save_resettlement_to_google():
     sheets = authorize_google()
 
     data = Resettlement.objects.all()
 
-    range_to_update = f"resettlement"
+    range_to_update = f"resettlement!A2"
 
     data_to_update = []
     for resettlement in data:
