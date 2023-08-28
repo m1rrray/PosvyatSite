@@ -1,28 +1,18 @@
 from django.db import models
 
-
-# def validate_people_custom(value):
-#     if not isinstance(value, list):
-#         raise ValidationError('Значение должно быть списком')
-#     print(value)
-#     if len(value) > 4:
-#         raise ValidationError('Количество фамилий не должно быть больше 4')
-# 
-#     for person in value:
-#         if not isinstance(person, dict):
-#             raise ValidationError('Каждый элемент списка должен быть словарем')
-# 
-#         if 'FIO' not in person:
-#             raise ValidationError('У каждого словаря должно быть поле "FIO"')
+from PosvyatSite.validators import validate_vk_url, validate_tg_link
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Resettlement(models.Model):
     surname = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     patronymic = models.CharField(max_length=100, blank=True)
-    vkurl = models.URLField()
-    tgurl = models.CharField(max_length=100)
+    vkurl = models.CharField(unique=True, validators=[validate_vk_url], max_length=255)
+    tgurl = models.CharField(unique=True, validators=[validate_tg_link], max_length=254)
+    phone = PhoneNumberField(null=False, blank=False, unique=True)
     program = models.CharField(max_length=100)
     group = models.CharField(max_length=100)
     year = models.IntegerField()
     people_custom = models.JSONField(default=list)
+

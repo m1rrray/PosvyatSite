@@ -1,6 +1,10 @@
+import re
+
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+
+from PosvyatSite.validators import validate_vk_url, validate_tg_link
 
 
 class Registration(models.Model):
@@ -17,8 +21,8 @@ class Registration(models.Model):
     name = models.CharField(max_length=254)
     patronymic = models.CharField(max_length=254, blank=True)
     email = models.EmailField(max_length=254)
-    vkurl = models.URLField(unique=True)
-    tgurl = models.CharField(unique=True, max_length=254)
+    vkurl = models.CharField(unique=True, validators=[validate_vk_url], max_length=255)
+    tgurl = models.CharField(unique=True, validators=[validate_tg_link], max_length=254)
     phone = PhoneNumberField(null=False, blank=False, unique=True)
     birth_date = models.DateField(max_length=254)
     sex = models.CharField(max_length=20, choices=GENDER_CHOICES)
@@ -29,6 +33,3 @@ class Registration(models.Model):
     group = models.CharField(max_length=254)
     transfer = models.CharField(max_length=254, choices=TRANSFER_CHOICES)
     health = models.CharField(max_length=254, blank=True)
-
-    def __str__(self):
-        return self.surname, self.name, self.patronymic

@@ -110,6 +110,7 @@ def save_resettlement_to_google():
                                   resettlement.patronymic,
                                   resettlement.vkurl,
                                   resettlement.tgurl,
+                                  str(resettlement.phone),
                                   resettlement.year,
                                   resettlement.program,
                                   resettlement.group,
