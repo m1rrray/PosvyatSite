@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'registration.apps.RegistrationConfig',
     'transfer.apps.TransferConfig',
     'resettlement.apps.ResettlementConfig',
+    'states',
 
 ]
 

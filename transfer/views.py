@@ -9,4 +9,3 @@ class TransferAPI(generics.ListCreateAPIView):
     queryset = Transfer.objects.all()
     serializer_class = TransferSerializer
     permission_classes = (IsAuthenticated, )
-

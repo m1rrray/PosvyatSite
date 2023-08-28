@@ -15,4 +15,3 @@ class ResettlementAPI(generics.ListCreateAPIView):
 
 
 
-

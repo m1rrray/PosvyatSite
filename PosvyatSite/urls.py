@@ -20,6 +20,7 @@ from rest_framework.authentication import TokenAuthentication
 
 from registration.views import RegistrationAPI
 from resettlement.views import ResettlementAPI
+from states.views import StatesAPI
 from transfer.views import TransferAPI
 
 urlpatterns = [
@@ -27,8 +28,7 @@ urlpatterns = [
     path('api/v1/registration/', RegistrationAPI.as_view()),
     path('api/v1/transfer/', TransferAPI.as_view()),
     path('api/v1/resettlement/', ResettlementAPI.as_view()),
-    # path('api/v1/auth/', include('djoser.urls')),
-    # re_path(r'^auth', include('djoser.urls.authtoken')),
+    path('api/v1/states/', StatesAPI.as_view())
 ]
 
 
