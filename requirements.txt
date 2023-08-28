@@ -12,7 +12,6 @@ django-phonenumber-field==7.1.0
 django-phonenumbers==1.0.1
 django-templated-mail==1.1.1
 djangorestframework==3.14.0
-djangorestframework-simplejwt==5.2.2
 et-xmlfile==1.1.0
 google==3.0.0
 google-api-core==2.11.1
