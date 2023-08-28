@@ -15,6 +15,7 @@ SPREADSHEET_ID = '1w5u-71ezRExkVrox6hX1-DNx_lEV4AJ7YdAO1b74HWs'
 
 
 def authorize_google():
+    credentials = None
     if os.path.exists("token.json"):
         credentials = Credentials.from_authorized_user_file("token.json", SCOPES)
     if not credentials or not credentials.valid:
