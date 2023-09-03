@@ -5,7 +5,7 @@ from transfer.models import Transfer
 from transfer.serializers import TransferSerializer
 
 
-class TransferAPI(generics.ListCreateAPIView):
+class TransferAPI(generics.CreateAPIView):
     queryset = Transfer.objects.all()
     serializer_class = TransferSerializer
     # permission_classes = (IsAuthenticated, )

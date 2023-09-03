@@ -8,7 +8,7 @@ from registration.serializers import RegistrationSerializer
 
 # Create your views here.
 
-class RegistrationAPI(generics.ListCreateAPIView):
+class RegistrationAPI(generics.CreateAPIView):
     queryset = Registration.objects.all()
     serializer_class = RegistrationSerializer
     # permission_classes = (IsAuthenticated,)

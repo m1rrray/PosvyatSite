@@ -5,7 +5,7 @@ from resettlement.models import Resettlement
 from resettlement.serializers import ResettlementSerializer
 
 
-class ResettlementAPI(generics.ListCreateAPIView):
+class ResettlementAPI(generics.CreateAPIView):
     queryset = Resettlement.objects.all()
     serializer_class = ResettlementSerializer
     # permission_classes = (IsAuthenticated,)
