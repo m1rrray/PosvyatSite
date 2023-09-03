@@ -8,4 +8,4 @@ from transfer.serializers import TransferSerializer
 class TransferAPI(generics.ListCreateAPIView):
     queryset = Transfer.objects.all()
     serializer_class = TransferSerializer
-    permission_classes = (IsAuthenticated, )
+    # permission_classes = (IsAuthenticated, )
