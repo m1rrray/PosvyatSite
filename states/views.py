@@ -8,4 +8,4 @@ from states.serializers import StateSerializer
 class StatesAPI(generics.ListAPIView):
     queryset = States.objects.all()
     serializer_class = StateSerializer
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
