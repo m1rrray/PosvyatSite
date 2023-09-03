@@ -8,7 +8,7 @@ from resettlement.serializers import ResettlementSerializer
 class ResettlementAPI(generics.ListCreateAPIView):
     queryset = Resettlement.objects.all()
     serializer_class = ResettlementSerializer
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
 
 
