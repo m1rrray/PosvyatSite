@@ -11,14 +11,19 @@ class TransferSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         phone = data.get('phone', None)
-        # print(data)
-        massive = [data.get('surname'), data.get('name'),
-                   data.get('patronymic'), data.get('email'), data.get('vkurl'),
-                   data.get('tgurl'), phone]
+        transfer = data.get('transfer')
+        departure_time = data.get('departure_time')
 
-        # save_datatransfer_to_google(massive)
+        # massive = [data.get('surname'), data.get('name'),
+        #            data.get('patronymic'), data.get('email'), data.get('vkurl'),
+        #            data.get('tgurl'), phone, transfer, departure_time]
+
         if phone is None:
             raise serializers.ValidationError('Не указан phone.')
+
+        count_transfer = Transfer.objects.filter(transfer=transfer, departure_time=departure_time)
+        if len(count_transfer) >= 46:
+            raise serializers.ValidationError('this is the route places have ended')
 
         try:
             registration = Registration.objects.get(phone=phone)
