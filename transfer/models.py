@@ -28,5 +28,5 @@ class Transfer(models.Model):
     vkurl = models.CharField(unique=True, validators=[validate_vk_url], max_length=255)
     tgurl = models.CharField(unique=True, validators=[validate_tg_link],  max_length=254)
     phone = PhoneNumberField(null=False, blank=False, unique=True)
-    transfer = models.CharField(max_length=254, choices=TRANSFER_CHOICES)
+    transfer = models.CharField(max_length=254, choices=TRANSFER_CHOICES, default=None)
     departure_time = models.CharField(max_length=30, choices=TIMES, default=None)
