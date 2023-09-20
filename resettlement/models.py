@@ -14,5 +14,5 @@ class Resettlement(models.Model):
     program = models.CharField(max_length=100)
     group = models.CharField(max_length=100)
     year = models.IntegerField()
-    people_custom = models.JSONField(default=list)
+    people_custom = models.JSONField(default=list, blank=True)
 
