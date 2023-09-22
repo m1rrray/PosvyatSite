@@ -15,12 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
-from rest_framework.authentication import TokenAuthentication
+from django.urls import path
+
 
 from registration.views import RegistrationAPI
 from resettlement.views import ResettlementAPI
 from states.views import StatesAPI
+from times.views import TimesAPIView
 from transfer.views import TransferAPI
 
 urlpatterns = [
@@ -28,7 +29,8 @@ urlpatterns = [
     path('api/v1/registration/', RegistrationAPI.as_view()),
     path('api/v1/transfer/', TransferAPI.as_view()),
     path('api/v1/resettlement/', ResettlementAPI.as_view()),
-    path('api/v1/states/', StatesAPI.as_view())
+    path('api/v1/states/', StatesAPI.as_view()),
+    path('api/v1/times/', TimesAPIView.as_view())
 ]
 
 

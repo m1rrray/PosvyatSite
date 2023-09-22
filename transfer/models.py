@@ -6,8 +6,8 @@ from PosvyatSite.validators import validate_vk_url, validate_tg_link
 
 class Transfer(models.Model):
     TRANSFER_CHOICES = (
-        ('Да, от Одинцово и обратно', 'Да, от Одинцово и обратно'),
-        ('Да, от Парка Победы и обратно', 'Да, от Парка Победы и обратно'),
+        ('Одинцово', 'Одинцово'),
+        ('Парк Победы', 'Парк Победы'),
     )
     TIMES = (
         ('15:15', '15:15'),
