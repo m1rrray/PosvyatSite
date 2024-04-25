@@ -11,7 +11,7 @@ from transfer.models import Transfer
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-SPREADSHEET_ID = '1w5u-71ezRExkVrox6hX1-DNx_lEV4AJ7YdAO1b74HWs'
+SPREADSHEET_ID = 'ссылка на таблицу, убрана в виду безопасности'
 
 
 def authorize_google():
